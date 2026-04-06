@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main circle background -->
+  <circle cx="256" cy="256" r="250" fill="url(#bgGrad)"/>
+
+  <!-- German flag stripe (subtle) -->
+  <rect x="56" y="180" width="400" height="20" rx="10" fill="#000" opacity="0.15"/>
+  <rect x="56" y="246" width="400" height="20" rx="10" fill="#DD0000" opacity="0.15"/>
+  <rect x="56" y="312" width="400" height="20" rx="10" fill="#FFCC00" opacity="0.15"/>
+
+  <!-- Book/Learning icon -->
+  <g transform="translate(256, 256)">
+    <!-- Open book -->
+    <path d="M-80,-40 Q-80,-80 -20,-80 L0,-60 L0,60 Q-60,40 -80,60 Z" fill="white" opacity="0.95"/>
+    <path d="M80,-40 Q80,-80 20,-80 L0,-60 L0,60 Q60,40 80,60 Z" fill="white" opacity="0.85"/>
+
+    <!-- Book spine -->
+    <rect x="-8" y="-60" width="16" height="120" rx="4" fill="white"/>
+
+    <!-- ABC text on book -->
+    <text x="-45" y="-10" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#667eea">A</text>
+    <text x="-45" y="25" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#764ba2">B</text>
+    <text x="25" y="-10" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#667eea">1</text>
+    <text x="25" y="25" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#764ba2">2</text>
+  </g>
+
+  <!-- Star accent -->
+  <polygon points="256,70 266,100 298,100 272,118 282,150 256,130 230,150 240,118 214,100 246,100" fill="#FFD700"/>
+</svg>

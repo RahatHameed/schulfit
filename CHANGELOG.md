@@ -16,6 +16,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.0] - 2026-04-06
+
+### Added - Docker Environment
+- **Dockerfile** - Multi-stage build (dev with node:20-slim, prod with nginx:alpine)
+- **docker-compose.yml** - Service orchestration for dev (port 5173) and prod (port 80)
+- **Makefile** - Standard commands with colored output (`make dev`, `make prod`, `make test`, etc.)
+- **nginx.conf** - Production SPA routing with gzip compression and caching
+- **.dockerignore** - Optimized Docker build context
+
+### Changed - DDD/SOLID Architecture Refactoring
+Refactored monolithic App.jsx (726 lines) into modular architecture (50 files):
+
+- **Components** (7 files): Owl, Confetti, ShapeSVG, DotGrid, CmpCard, CmpAnswers, TutOverlay
+- **Screens** (11 files): Loading, Setup, Welcome, Menu, Quiz, Flash, Voice, Stats, Settings, About, Results
+- **Hooks** (4 files): useStorageData, useQuizSession, useAudio, useSpeechRecognition
+- **Services** (5 files): StorageService, AudioService, DataGenerationService, QuizLogicService, ProgressService
+- **Constants** (3 files): modes, styles, celebrations
+- **Data** (5 files): categories, colors, gradients, groups, tutorial
+- **Utils** (4 files): germanUtils, dateUtils, arrayUtils, linkUtils
+
+### Technical
+- All 18 tests passing
+- App.jsx reduced from 726 to 506 lines
+- Production build: 579 kB (173 kB gzipped)
+- Docker dev server with hot reload
+- Docker prod server with nginx
+
+---
+
 ## [1.0.1] - 2026-04-06
 
 ### Fixed
@@ -81,6 +110,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| 2.0.0 | 2026-04-06 | Docker environment + DDD/SOLID refactoring |
 | 1.0.1 | 2026-04-06 | Bug fix for React.Fragment import |
 | 1.0.0 | 2026-04-06 | Initial release with 18 categories |
 

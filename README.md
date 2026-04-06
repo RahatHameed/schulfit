@@ -95,10 +95,36 @@ Built with love by a Pakistani software engineer in Frankfurt, this app addresse
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 18+ (or Docker)
 - npm or yarn
 
-### Installation
+### Quick Start with Docker (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/RahatHameed/schulfit.git
+cd schulfit
+
+# Start development server with hot reload
+make dev
+
+# Or run production server
+make prod
+```
+
+### Docker Commands
+
+| Command | Description |
+|---------|-------------|
+| `make dev` | Start development server with hot reload (port 5173) |
+| `make prod` | Build and run production server (port 80) |
+| `make down` | Stop and remove containers |
+| `make test` | Run test suite |
+| `make logs` | View container logs |
+| `make clean` | Remove all containers and images |
+| `make help` | Show all available commands |
+
+### Local Installation (Without Docker)
 
 ```bash
 # Clone the repository
@@ -120,10 +146,10 @@ npm run dev
 npm run build
 ```
 
-### Preview Production Build
+### Run Tests
 
 ```bash
-npm run preview
+npm run test:run
 ```
 
 ## Tech Stack
@@ -133,19 +159,29 @@ npm run preview
 - **Charts**: Recharts
 - **Speech**: Web Speech API
 - **Storage**: LocalStorage
+- **Testing**: Vitest + React Testing Library
+- **Containerization**: Docker + nginx
 - **Hosting**: Vercel
 
 ## Project Structure
 
 ```
 schulfit/
-├── public/
-│   └── vite.svg
 ├── src/
+│   ├── components/      # Reusable UI components (Owl, Confetti, etc.)
+│   ├── screens/         # Screen components (Welcome, Menu, Quiz, etc.)
+│   ├── hooks/           # Custom React hooks
+│   ├── services/        # Business logic (Audio, Storage, Quiz)
+│   ├── constants/       # App constants (modes, styles, celebrations)
+│   ├── data/            # Static data (categories, colors, tutorial)
+│   ├── utils/           # Utility functions (german, date, array)
 │   ├── App.jsx          # Main application component
-│   ├── main.jsx         # Entry point
-│   └── index.css        # Global styles
-├── index.html
+│   ├── App.test.jsx     # Test suite
+│   └── main.jsx         # Entry point
+├── Dockerfile           # Multi-stage Docker build
+├── docker-compose.yml   # Dev/prod service definitions
+├── Makefile             # Build commands
+├── nginx.conf           # Production server config
 ├── package.json
 ├── vite.config.js
 └── README.md
