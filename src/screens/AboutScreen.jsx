@@ -164,6 +164,48 @@ export function AboutScreen({ onBack }) {
             </div>
           </button>
         </div>
+
+        {/* Bug Report Section */}
+        <div
+          style={{
+            background: 'rgba(255,255,255,.15)',
+            borderRadius: 16,
+            padding: '16px 20px',
+            marginBottom: 14
+          }}
+        >
+          <div style={{ color: 'white', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>
+            Found a Bug?
+          </div>
+          <div style={{ color: 'rgba(255,255,255,.8)', fontSize: 12, lineHeight: 1.6, marginBottom: 12 }}>
+            Help us improve SchulFit by reporting issues. You can also suggest new features or improvements.
+          </div>
+          <button
+            onClick={() => openLink('https://github.com/RahatHameed/schulfit/issues')}
+            style={{
+              width: '100%',
+              background: 'rgba(255,255,255,.2)',
+              border: 'none',
+              borderRadius: 12,
+              padding: '12px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 8
+            }}
+          >
+            <span style={{ fontSize: 18 }}>🐛</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: 'white' }}>
+              Report Bug on GitHub
+            </span>
+          </button>
+        </div>
+
+        {/* Version Info */}
+        <div style={{ textAlign: 'center', color: 'rgba(255,255,255,.5)', fontSize: 11 }}>
+          SchulFit v2.0.0
+        </div>
       </div>
     </div>
   );
