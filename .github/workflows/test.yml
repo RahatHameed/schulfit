@@ -5,6 +5,16 @@ on:
     branches: [main]
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        required: false
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - production
 
 jobs:
   test:
