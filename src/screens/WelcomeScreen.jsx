@@ -2,10 +2,10 @@
 // WelcomeScreen Component - Home/welcome screen
 // =============================================================================
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Owl, TutOverlay } from '../components';
 import { BG, CSS, B } from '../constants/styles';
-import { openLink } from '../utils/linkUtils';
+import { openLink, shareApp } from '../utils/linkUtils';
 
 /**
  * Welcome screen with main navigation
@@ -33,6 +33,19 @@ export function WelcomeScreen({
   onAbout,
   onShowTutorial
 }) {
+  const [shareStatus, setShareStatus] = useState(null);
+
+  const handleShare = async () => {
+    const result = await shareApp();
+    if (result.method === 'clipboard' && result.success) {
+      setShareStatus('copied');
+      setTimeout(() => setShareStatus(null), 2000);
+    } else if (result.method === 'share' && result.success) {
+      setShareStatus('shared');
+      setTimeout(() => setShareStatus(null), 2000);
+    }
+  };
+
   return (
     <div
       style={{
@@ -137,7 +150,7 @@ export function WelcomeScreen({
               YouTube
             </button>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
             <button
               onClick={() => openLink('https://forms.gle/drTrdvgwEJsc9kbn7')}
               style={{ ...B('rgba(34,197,94,.7)'), flex: 1, fontSize: 12, fontWeight: 800 }}
@@ -151,6 +164,18 @@ export function WelcomeScreen({
               Support
             </button>
           </div>
+          <button
+            onClick={handleShare}
+            style={{
+              ...B(shareStatus === 'copied' ? 'rgba(34,197,94,.8)' : 'rgba(255,255,255,.25)'),
+              width: '100%',
+              fontSize: 13,
+              fontWeight: 700,
+              transition: 'background 0.2s'
+            }}
+          >
+            {shareStatus === 'copied' ? '✓ Link Copied!' : shareStatus === 'shared' ? '✓ Shared!' : '📤 Share with Friends'}
+          </button>
         </div>
 
         <button
