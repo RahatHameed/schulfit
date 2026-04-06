@@ -67,8 +67,29 @@ Built with love by a Pakistani software engineer in Frankfurt, this app addresse
 ## Screenshots
 
 <p align="center">
-  <i>Coming soon</i>
+  <img src="screenshots/01-welcome.png" width="280" alt="Welcome Screen">
+  <img src="screenshots/02-menu.png" width="280" alt="Category Menu">
+  <img src="screenshots/03-quiz.png" width="280" alt="Quiz Mode">
 </p>
+
+<p align="center">
+  <img src="screenshots/04-flashcard.png" width="280" alt="Flash Cards">
+  <img src="screenshots/05-voice.png" width="280" alt="Voice Mode">
+  <img src="screenshots/06-stats.png" width="280" alt="Statistics">
+</p>
+
+<details>
+<summary><strong>View More Screenshots</strong></summary>
+<br>
+
+| Screen | Description |
+|--------|-------------|
+| ![Setup](screenshots/07-setup.png) | Initial setup screen |
+| ![Settings](screenshots/08-settings.png) | Voice and profile settings |
+| ![Results](screenshots/09-results.png) | Quiz results with celebration |
+| ![Tutorial](screenshots/10-tutorial.png) | First-time user tutorial |
+
+</details>
 
 ## Getting Started
 
