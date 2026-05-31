@@ -10,7 +10,12 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+dev-dist
 *.local
+
+# Local env (e.g. VITE_GOOGLE_CLIENT_ID)
+.env
+.env.local
 
 # Editor directories and files
 .vscode/*
